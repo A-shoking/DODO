@@ -1,4 +1,4 @@
-services:
+#services:
 #  mysql:
 #    image: 'mysql:latest'
 #    environment:
@@ -8,3 +8,11 @@ services:
 #      - 'MYSQL_USER=myuser'
 #    ports:
 #      - '3306'
+
+#
+#spring:
+#    datasource:
+#        driver-class-name: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
+#        url: jdbc:mysql://localhost:3306/todo_app
+#        username: root
+#        password: root
