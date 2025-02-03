@@ -54,10 +54,22 @@ public class TodoController {
 	
 	  @PostMapping("create")
 	    public ResponseEntity<Todo> createTodo(@RequestBody Map<String, String> requestBody) {
+		  Long id = null;
+	        if (requestBody.containsKey("Id") && requestBody.get("Id") != null) {
+	            try {
+	                id = Long.parseLong(requestBody.get("Id")); // Convert the string to Long
+	            } catch (NumberFormatException e) {
+	                // Return bad request if the Id cannot be parsed to a long
+	                return ResponseEntity.badRequest().build();
+	            }
+	        }
+
 	        Todo createdTodo = todoService.createTodo(
+	               
 	                requestBody.get("heading"),
 	                requestBody.get("progress"),
-	                requestBody.get("date")
+	                requestBody.get("date"),
+	                id
 	        );
 	        return ResponseEntity.status(201).body(createdTodo);
 	    }

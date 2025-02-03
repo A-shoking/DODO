@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.example.DOO.model.Todo;
 import com.example.DOO.model.TodoRequest;
 
-@Repository
-public interface CreateRepository extends JpaRepository<TodoRequest, Long> {
+//@Repository
+public interface CreateRepository {
 
 }
